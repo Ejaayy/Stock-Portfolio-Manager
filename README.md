@@ -1,5 +1,12 @@
-![Project Logo](Logo.png)
-<img src="Logo.png" alt="Banner" width="100%" />
+<p align="center">
+  <img src="Logo.png" alt="Finance App Logo" width="120">
+</p>
+
+<h1 align="center">Finance App</h1>
+
+<p align="center">
+  💰 Simulate stock trading and manage your virtual portfolio 💼  
+</p>
 # Finance App - README
 
 ## Project Description
