@@ -1,5 +1,5 @@
-![Project Logo](logo.png)
-<img src="logo.png" alt="Banner" width="100%" />
+![Project Logo](Logo.png)
+<img src="Logo.png" alt="Banner" width="100%" />
 # Finance App - README
 
 ## Project Description
