@@ -1,3 +1,5 @@
+![Project Logo](https://example.com/logo.png)
+<img src="https://example.com/banner.png" alt="Banner" width="100%" />
 # Finance App - README
 
 ## Project Description
