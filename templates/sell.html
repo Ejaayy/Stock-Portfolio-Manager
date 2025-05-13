@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell Stocks
+{% endblock %}
+
+{% block main %}
+<div class="container my-5">
+    <!-- Heading Section -->
+    <h2 class="text-center mb-4">Sell Stocks</h2>
+
+    <!-- Stock Sell Form -->
+    <form action="/sell" method="POST" class="mx-auto w-50">
+        <div class="mb-3">
+            <label for="sellStock" class="form-label">Stock Symbol</label>
+            <select class="form-select" id="sellStock" name="symbol" required>
+                <option value="" disabled selected>Select a stock</option>
+                {% for symbol in symbols %}
+                    <option value="{{ symbol }}">{{ symbol }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="sharesAmount" class="form-label">Number of Shares</label>
+            <input autocomplete="off" class="form-control" id="sharesAmount" name="shares" placeholder="e.g., 5" type="number" min="1" required>
+        </div>
+        <button class="btn btn-danger w-100" type="submit">Sell Shares</button>
+    </form>
+
+    {% if status %}
+    <!-- Success Message Section -->
+    <div class="card mt-4 mx-auto w-50 shadow-sm">
+        <div class="card-body text-center">
+            <h5 class="card-title text-success">✔ Successfully Sold {{ status.name }} ({{ status.symbol }})</h5>
+            <p class="card-text text-muted">
+                Sold {{ shares }} shares at ${{ "%.2f"|format(status.price) }} each<br>
+                Total: ${{ "%.2f"|format(shares * status.price) }}
+            </p>
+            <a href="/sell" class="btn btn-outline-primary">Sell More Stocks</a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+/* Navbar Branding */
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue {
+    color: #537fbe;
+}
+
+nav .navbar-brand .red {
+    color: #ea433b;
+}
+
+nav .navbar-brand .yellow {
+    color: #f5b82e;
+}
+
+nav .navbar-brand .green {
+    color: #2e944b;
+}
+
+/* Page Background */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure body and html take up full height */
+    width: 100%;  /* Ensure full width */
+    background-image: url('pattern-randomized.svg'); /* Your SVG background */
+    background-size: cover; /* Ensure background covers the page */
+    background-position: center; /* Center the background */
+    background-repeat: no-repeat; /* Prevent repeating */
+}
+
+/* Navbar Styling */
+nav {
+    position: sticky;            /* Fix navbar to top */
+    top: 0;                      /* Stick to the top */
+    z-index: 1000;               /* Ensure navbar stays on top of the background */
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: make navbar semi-transparent */
+    width: 100%;                 /* Ensure navbar stretches across the width */
+    padding: 15px 0;             /* Optional: adjust padding for better appearance */
+    margin: 0;                   /* Ensure no margin */
+}
+
+/* Content Container */
+.container {
+    z-index: 1;                  /* Ensure content appears above the background */
+    position: relative;          /* Maintain content position */
+    padding-top: 80px;           /* Ensure content doesn't overlap navbar */
+    text-align: center;          /* Center text */
+    width: 100%;                 /* Full width */
+}
+
+/* Remove flexbox styling from body, it's not needed here */
+body {
+    padding-top: 0; /* Remove padding at the top of the page */
+    margin-top: 0;  /* Remove margin at the top of the page */
+    width: 100%;    /* Full width */
+    height: 100%;   /* Full height */
+}

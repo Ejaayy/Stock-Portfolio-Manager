@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="container my-5">
+        <!-- Heading Section -->
+        <h2 class="text-center mb-4">Account History</h2>
+
+        <!-- Table displaying transaction history -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Transaction ID</th>
+                    <th scope="col">Stock Symbol</th>
+                    <th scope="col">Shares</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Transaction Type</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in history %}
+                    <tr>
+                        <td>{{ transaction.id }}</td>
+                        <td>{{ transaction.stock_symbol }}</td>
+                        <td>{{ transaction.shares }}</td>
+                        <td>${{ "%.2f"|format(transaction.price) }}</td>
+                        <td>${{ "%.2f"|format(transaction.shares * transaction.price) }}</td>
+                        <td>{{ transaction.transaction_type }}</td>
+                        <td>{{ transaction.timestamp }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

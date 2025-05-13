@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="container my-5">
+    <!-- Heading Section -->
+    <h2 class="text-center mb-4">Buy Stocks</h2>
+
+    <!-- Stock Quote Form -->
+    <form action="/buy" method="POST" class="mx-auto w-50">
+        <div class="mb-3">
+            <label for="buyStock" class="form-label">Stock Symbol</label>
+            <input autocomplete="off" autofocus class="form-control" id="buyStock" name="symbol" placeholder="e.g., AAPL" type="text" required>
+        </div>
+        <div class="mb-3">
+            <label for="stockAmount" class="form-label">Amount</label>
+            <input autocomplete="off" class="form-control" id="stockAmount" name="shares" placeholder="e.g., 5" type="number" min="1" required>
+        </div>
+        <button class="btn btn-success w-100" type="submit">Buy Stock</button>
+    </form>
+    <p>112.00</p>
+    <p>9,888.00</p>
+    {% if status %}
+        <!-- Display the Quote Information -->
+        <div class="card mt-4 mx-auto w-50 shadow-sm">
+            <div class="card-body text-center">
+                <h5 class="card-title text-success">✔ Successfully bought {{ status.name }} ({{ status.symbol }})</h5>
+                <p class="card-text text-muted mb-0">Bought {{ shares }} shares at ${{ "%.2f"|format(price) }}.</p>
+                <p class="card-text text-muted mb-0">A total of ${{ "%.2f"|format(total_price) }} has been deducted from your account.</p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

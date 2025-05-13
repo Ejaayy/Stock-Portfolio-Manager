@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="container my-5">
+        <!-- Heading Section -->
+        <h2 class="text-center mb-4">Stock Quote Request</h2>
+
+        <!-- Stock Quote Form -->
+        <form action="/quote" method="POST">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-50" name="symbol" placeholder="Enter Stock Symbol (e.g., AAPL)" type="text" required>
+            </div>
+            <button class="btn btn-primary w-50 mx-auto d-block" type="submit">Request Quote</button>
+        </form>
+
+        {% if status %}
+            <!-- Display the Quote Information -->
+            <div class="mt-4 alert alert-info">
+                <h4 class="text-center">{{ status.name }} ({{ status.symbol }})</h4>
+                <p class="text-center">Current Price: ${{ "%.2f"|format(status.price) }}</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
