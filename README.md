@@ -25,7 +25,7 @@ This is a web-based finance application designed to simulate stock market transa
 ## Screenshots
 
 ### Portfolio Dashboard
-![Portfolio Dashboard]Website_Image1.png)
+![Portfolio Dashboard}(Website_Image1.png)
 
 ### Stock Search
 ![Stock Search](Website_Image2.png)
