@@ -22,6 +22,16 @@ This is a web-based finance application designed to simulate stock market transa
 * **requests:** For making HTTP requests to retrieve stock quote data.
 * **Werkzeug:** For password hashing and security.
 
+## Screenshots
+
+### Portfolio Dashboard
+![Portfolio Dashboard]Website_Image1.png)
+
+### Stock Search
+![Stock Search](Website_Image2.png)
+
+### User Login
+![User Login](Website_Image3.jpg)
 ## File Structure
 
 * `app.py`: The main application file containing the Flask routes and application logic.
