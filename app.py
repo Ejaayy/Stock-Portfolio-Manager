@@ -64,7 +64,7 @@ def buy():
         except (ValueError, TypeError):
             return apology("Invalid number of shares", 400)
 
-
+        stock = lookup(symbol)
         price = stock["price"]
         total_cost = price * shares
 
